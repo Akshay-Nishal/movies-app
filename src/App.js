@@ -41,6 +41,7 @@ function App() {
 
   function addMovieHandler(movie) {
     console.log(movie);
+    setMovies((prev)=>[movie,...prev])
   }
 
   let content = <p>Found no movies.</p>;
@@ -59,9 +60,9 @@ function App() {
 
   return (
     <React.Fragment>
-      {/* <section>
+      <section>
         <AddMovie onAddMovie={addMovieHandler} />
-      </section> */}
+      </section>
       <section>
         <button onClick={fetchMoviesHandler}>Fetch Movies</button>
       </section>
